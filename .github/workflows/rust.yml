@@ -16,8 +16,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Add arm64 arch
+      run: dpkg --add-architecture arm64
     - name: Install retarded deps from ubuntu
-      run: sudo apt install pkg-config libssl-dev
+      run: sudo apt-get install --assume-yes libssl-dev:arm64
+    - name: Set aarch env
+      run: export PKG_CONFIG_LIBDIR=/usr/lib/aarch64-linux-gnu/pkgconfig
+    - name: Install more retarded shit
+      run: sudo apt-get install libssl-dev pkg-config -y
     - name: Install aarch64
       run: rustup target add aarch64-unknown-linux-gnu
     - name: Install Cross
