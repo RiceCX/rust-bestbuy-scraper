@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Add arm64 arch
-      run: dpkg --add-architecture arm64
+      run: sudo dpkg --add-architecture arm64
     - name: Install retarded deps from ubuntu
       run: sudo apt-get install --assume-yes libssl-dev:arm64
     - name: Set aarch env
