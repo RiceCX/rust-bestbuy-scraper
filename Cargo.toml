@@ -1,0 +1,18 @@
+[package]
+name = "rust-scraper"
+version = "0.1.0"
+authors = ["AndyIsCool5463 <andyl5463@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dotenv = "0.15"
+kuchiki = { version = "0.8.1" }
+tokio = { version = "1.5.0", features = ["full"] }
+reqwest = { version = "0.11.3", features = ["json"] }
+chrono = "0.4"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+regex = "1.5"
+lazy_static = "1.4.0"
